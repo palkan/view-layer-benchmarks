@@ -1,0 +1,15 @@
+<%= render TableComponent.new do |table| %>
+  <% table.with_head { "Name" } %>
+  <% table.with_head(class_name: "text-right") { "Status" } %>
+
+  <% @cables.each do |cable| %>
+    <% table.with_row do |row| %>
+      <% row.with_cell(class_name: "font-medium") do %>
+        <a href="<%=Rails.application.routes.url_helpers.cable_path(cable.id)%> class="hover:text-primary"><%=cable.name %></a>
+      <% end %>
+      <% row.with_cell(class_name: "text-right") do %>
+        <span class="cable-<%= cable.status %>"><%= cable.status %></span>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

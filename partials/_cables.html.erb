@@ -1,0 +1,16 @@
+<%= render "shared/table" do %>
+  <%= render "shared/table/header" do %>
+    <%= render "shared/table/row" do %>
+      <%= render "shared/table/head", label: "Name" %>
+      <%= render "shared/table/head", class_name: "text-right", label: "Status" %>
+    <% end %>
+  <% end %>
+
+  <%= render "shared/table/body" do %>
+    <%= render partial: "cables/cable_row",
+               collection: cables,
+               as: :cable,
+               cached: true # Enable caching if appropriate
+    %>
+  <% end %>
+<% end %>
