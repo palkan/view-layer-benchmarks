@@ -47,3 +47,23 @@ Comparison:
             partials:     1567.4 i/s - 7.70x  slower
 ```
 
+The original benchmark:
+
+```sh
+$ bundle exec rake benchmark
+
+Warming up --------------------------------------
+      view_component     1.438k i/100ms
+            partials   562.000 i/100ms
+               phlex     1.790k i/100ms
+Calculating -------------------------------------
+      view_component     14.738k (± 3.2%) i/s -    148.114k in  10.060020s
+            partials      5.721k (± 2.2%) i/s -     57.324k in  10.024871s
+               phlex     17.609k (± 2.1%) i/s -    177.210k in  10.068056s
+
+Comparison:
+               phlex:    17609.0 i/s
+      view_component:    14738.3 i/s - 1.19x  slower
+            partials:     5721.0 i/s - 3.08x  slower
+```
+
