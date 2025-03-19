@@ -1,0 +1,8 @@
+<%= render "shared/table/row" do %>
+  <%= render "shared/table/cell", class_name: "font-medium" do %>
+    <%= link_to cable.name, Rails.application.routes.url_helpers.cable_path(cable.id), class: "hover:text-primary" %>
+  <% end %>
+  <%= render "shared/table/cell", class_name: "text-right" do %>
+    <span class="cable-<%= cable.status %>"><%= cable.status %></span>
+  <% end %>
+<% end %>
